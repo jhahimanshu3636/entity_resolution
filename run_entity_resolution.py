@@ -1,5 +1,5 @@
 import pandas as pd
-from integrated_contextual_resolver import IntegratedEntityResolver
+from entity_resolution_script import IntegratedEntityResolver
 import time
 from datetime import datetime
 import sys
