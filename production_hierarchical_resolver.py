@@ -1,21 +1,3 @@
-"""
-CORRECTED ENTITY RESOLUTION - Single Pass Processing
-=====================================================
-
-The hierarchical approach has a fundamental flaw:
-- Same company name can appear in multiple country pairs
-- Each partition assigns its own cluster IDs
-- Same company gets multiple cluster IDs
-- Result: Negative deduplication rate!
-
-Solution: Process ALL companies together in ONE pass.
-Context still validates matches within the single run.
-
-Author: Expert Data Scientist
-Version: 4.0 (FINAL FIX)
-Date: December 2025
-"""
-
 import pandas as pd
 from integrated_contextual_resolver import IntegratedEntityResolver
 import time
@@ -23,11 +5,7 @@ from datetime import datetime
 import sys
 
 
-def main():
-    """
-    Single-pass entity resolution (no hierarchical partitioning).
-    """
-    
+def main(): 
     print("\n" + "=" * 80)
     print("CORRECTED ENTITY RESOLUTION v4.0")
     print("Single-pass processing with context validation")
@@ -96,7 +74,6 @@ def main():
     
     print("STEP 2/3: Processing entity resolution...")
     print("-" * 80)
-    print(f"   This will take approximately 2-3 hours for 615K companies")
     print(f"   Processing all data together (no partitioning)")
     print()
     
